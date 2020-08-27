@@ -1,4 +1,4 @@
-# Interactive Section List
+# React Native Interactive Section List
 
 Interactive Section List is a scrollable tab bar-controlled SectionList.
 
