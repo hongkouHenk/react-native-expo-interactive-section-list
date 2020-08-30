@@ -20,7 +20,7 @@ const DishItem: React.FC<Props> = ({ item }) => {
     <View style={styles.container}>
       <View style={styles.infoView}>
         <Text style={styles.title} numberOfLines={1}>
-          {item.title}
+          {item}
         </Text>
         <Text style={styles.description} numberOfLines={2}>
           Here will be a short descriptions for this dish. Tell you one thing,

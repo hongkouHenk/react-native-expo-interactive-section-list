@@ -43,8 +43,13 @@ const getData = (items: Array<any>) => {
 
   const sectionList: Array<any> = items.map((section, index) => {
     section.data.forEach((sectionItem: any) => {
-      sectionItem.sectionIndex = index;
-      flattenedList.push(sectionItem);
+      if (typeof sectionItem === 'object') {
+        sectionItem.sectionIndex = index;
+        flattenedList.push(sectionItem);
+      } else if (typeof sectionItem === 'string') {
+        const obj = { title: sectionItem, sectionIndex: index };
+        flattenedList.push(obj);
+      }
     });
 
     return section;
@@ -191,7 +196,9 @@ const SelectableSectionList: React.FC<Props> = ({
         items={tabbarItems}
         onPress={(index: number) => handleTabItemPress(index)}
         selectedIndex={selectedIndex}
-        firstValueInView={data[firstIndexInView].title}
+        firstValueInView={
+          data[firstIndexInView] ? data[firstIndexInView].title : ''
+        }
         isManualSelect={isManualSelect}
         scrollDirection={scrollDirection}
         itemWidth={tabbarItemWidth}

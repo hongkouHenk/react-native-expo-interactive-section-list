@@ -4,34 +4,47 @@ import { SelectableSectionList } from 'react-native-expo-interactive-section-lis
 
 import DishItem from './DishItem';
 
-import { recipies } from './dataHelper';
+// import { recipies } from './dataHelper';
+const DATA = [
+  {
+    title: 'Main dishes',
+    data: ['Pizza', 'Burger', 'Risotto'],
+  },
+  {
+    title: 'Sides',
+    data: ['French Fries', 'Onion Rings', 'Fried Shrimps'],
+  },
+  {
+    title: 'Drinks',
+    data: ['Water', 'Coke', 'Beer'],
+  },
+  {
+    title: 'Desserts',
+    data: ['Cheese Cake', 'Ice Cream'],
+  },
+  {
+    title: 'Main dishes',
+    data: ['Pizza', 'Burger', 'Risotto'],
+  },
+  {
+    title: 'Sides',
+    data: ['French Fries', 'Onion Rings', 'Fried Shrimps'],
+  },
+  {
+    title: 'Drinks',
+    data: ['Water', 'Coke', 'Beer'],
+  },
+  {
+    title: 'Desserts',
+    data: ['Cheese Cake', 'Ice Cream'],
+  },
+];
 
 const searchIcon = require('../assets/search.png');
 
-// CONVERTS DATA INTO SECTIONLIST COMPATIBLE DATA
-const getSectionListData = (data: Array<any>) => {
-  const sectionData: Array<any> = [];
-
-  data.forEach((item) => {
-    const matchIndex = sectionData.findIndex(
-      (sectionItem) => sectionItem.title === item.type
-    );
-    if (matchIndex === -1) {
-      sectionData.push({
-        title: item.type,
-        data: [item],
-      });
-    } else {
-      sectionData[matchIndex].data.push(item);
-    }
-  });
-
-  return sectionData;
-};
-
 const Home: React.FC = () => (
   <SelectableSectionList
-    data={getSectionListData(recipies)}
+    data={DATA}
     renderItem={({ item }) => <DishItem item={item} />}
     itemHeight={100}
     tabbarItemWidth={100}
