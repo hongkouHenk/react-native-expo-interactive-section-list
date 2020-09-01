@@ -73,7 +73,7 @@ const getTabbarItems = (items: Array<any>) => {
 
 let scrollOffset = 0;
 
-const SelectableSectionList: React.FC<Props> = ({
+const InteractiveSectionList: React.FC<Props> = ({
   data,
   renderItem,
   itemHeight,
@@ -132,7 +132,7 @@ const SelectableSectionList: React.FC<Props> = ({
     setSectionsFeed(listObject.sectionList);
     setFlattenedList(listObject.flattenedList);
     setTabbarItems(getTabbarItems(listObject.sectionList));
-  }, []);
+  }, [data]);
 
   const renderFlatlist = () => (
     <SectionList
@@ -214,4 +214,4 @@ const SelectableSectionList: React.FC<Props> = ({
   );
 };
 
-export default SelectableSectionList;
+export default InteractiveSectionList;

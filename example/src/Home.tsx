@@ -1,10 +1,8 @@
-import React from 'react';
-
-import { SelectableSectionList } from 'react-native-expo-interactive-section-list';
+import React, { useState, useEffect } from 'react';
+import { InteractiveSectionList } from 'react-native-expo-interactive-section-list';
 
 import DishItem from './DishItem';
 
-// import { recipies } from './dataHelper';
 const DATA = [
   {
     title: 'Main dishes',
@@ -42,19 +40,27 @@ const DATA = [
 
 const searchIcon = require('../assets/search.png');
 
-const Home: React.FC = () => (
-  <SelectableSectionList
-    data={DATA}
-    renderItem={({ item }) => <DishItem item={item} />}
-    itemHeight={100}
-    tabbarItemWidth={100}
-    tabbarItemSpaceBetween={8}
-    tabbarItemFontSize={16}
-    tabbarItemActiveColor="#FED41A"
-    tabbarItemInactiveColor="#FFF"
-    tabbarItemHeight={40}
-    tabbarIcon={searchIcon}
-  />
-);
+const Home: React.FC = () => {
+  const [data, setData] = useState<Array<any>>([]);
+
+  useEffect(() => {
+    setData(DATA);
+  }, []);
+
+  return (
+    <InteractiveSectionList
+      data={data}
+      renderItem={({ item }) => <DishItem item={item} />}
+      itemHeight={100}
+      tabbarItemWidth={100}
+      tabbarItemSpaceBetween={8}
+      tabbarItemFontSize={16}
+      tabbarItemActiveColor="#FED41A"
+      tabbarItemInactiveColor="#FFF"
+      tabbarItemHeight={40}
+      tabbarIcon={searchIcon}
+    />
+  );
+};
 
 export default Home;

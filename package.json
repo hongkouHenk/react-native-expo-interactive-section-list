@@ -1,6 +1,6 @@
 {
   "name": "react-native-expo-interactive-section-list",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A performant scrollable tabbar-controlled interactive section list",
   "main": "dist/module/index.js",
   "react-native": "dist/module/index.js",

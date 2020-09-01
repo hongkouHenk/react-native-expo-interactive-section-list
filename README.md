@@ -24,7 +24,7 @@ npm install react-native-expo-interactive-section-list
 ## Usage
 
 ```python
-import React from 'react';
+import React, { useState, useEffect} from 'react';
 
 import InteractiveSectionList from 'react-native-expo-interactive-section-list';
 
@@ -51,8 +51,15 @@ const DATA = [
   }
 ];
 
-const Home = () => (
-    <SelectableSectionList
+const Home = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    setData(DATA);
+  }, []);
+
+  return (
+    <InteractiveSectionList
       data={DATA} // REQUIRED: SECTIONLIST DATA
       renderItem={({ item }) => <DishItem item={item} />} // REQUIRED: SECTIONLIST ITEM COMPONENT
       itemHeight={100}  // REQUIRED: USED TO IMPROVE PERFORMANCE
@@ -64,7 +71,7 @@ const Home = () => (
       tabbarItemHeight={40}  // OPTIONAL
       tabbarIcon={searchIcon}  // OPTIONAL
     />
-  );
+  )};
 
 export default Home;
 ```

@@ -1,1 +1,1 @@
-export { default as SelectableSectionList } from './SelectableSectionList';
+export { default as InteractiveSectionList } from './InteractiveSectionList';
