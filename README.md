@@ -60,7 +60,7 @@ const Home = () => {
 
   return (
     <InteractiveSectionList
-      data={DATA} // REQUIRED: SECTIONLIST DATA
+      data={data} // REQUIRED: SECTIONLIST DATA
       renderItem={({ item }) => <DishItem item={item} />} // REQUIRED: SECTIONLIST ITEM COMPONENT
       itemHeight={100}  // REQUIRED: USED TO IMPROVE PERFORMANCE
       tabbarItemWidth={100}  // OPTIONAL
