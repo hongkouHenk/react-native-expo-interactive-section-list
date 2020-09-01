@@ -5,6 +5,8 @@ import {
   Text,
   StyleSheet,
   ImageSourcePropType,
+  SectionListRenderItem,
+  SectionListData,
 } from 'react-native';
 import sectionListGetItemLayout from 'react-native-section-list-get-item-layout';
 
@@ -14,8 +16,11 @@ import { contentViewStyles as styles } from './styles';
 
 interface Props {
   data: Array<any>;
-  renderItem: (item: any) => JSX.Element;
+  renderItem: SectionListRenderItem<any>;
   itemHeight: number;
+  renderSectionHeader?: (info: {
+    section: SectionListData<any>;
+  }) => JSX.Element;
   tabbarItemWidth?: number;
   tabbarItemHeight?: number;
   tabbarItemSpaceBetween?: number;
@@ -77,6 +82,7 @@ const InteractiveSectionList: React.FC<Props> = ({
   data,
   renderItem,
   itemHeight,
+  renderSectionHeader,
   tabbarItemWidth,
   tabbarItemHeight,
   tabbarItemSpaceBetween,
@@ -113,6 +119,25 @@ const InteractiveSectionList: React.FC<Props> = ({
     listHeaderHeight: 0,
   });
 
+  const handleRenderSectionHeader: any = (info: {
+    section: SectionListData<any>;
+  }) => {
+    if (renderSectionHeader) {
+      return renderSectionHeader(info);
+    }
+
+    return (
+      <Text
+        style={styles.sectionHeader}
+        onLayout={({ nativeEvent }) =>
+          setSectionHeaderHeight(nativeEvent.layout.height)
+        }
+      >
+        {info.section.title}
+      </Text>
+    );
+  };
+
   useEffect(() => {
     if (!isManualSelect) return;
 
@@ -139,18 +164,9 @@ const InteractiveSectionList: React.FC<Props> = ({
       ref={flatListRef}
       contentContainerStyle={styles.contentContainer}
       sections={sectionsFeed}
-      renderItem={(args) => renderItem(args)}
+      renderItem={renderItem}
       getItemLayout={(data: any, index: number) => getItemLayout(data, index)}
-      renderSectionHeader={({ section: { title } }) => (
-        <Text
-          style={styles.sectionHeader}
-          onLayout={({ nativeEvent }) =>
-            setSectionHeaderHeight(nativeEvent.layout.height)
-          }
-        >
-          {title}
-        </Text>
-      )}
+      renderSectionHeader={handleRenderSectionHeader}
       scrollEventThrottle={16}
       onScroll={({ nativeEvent }) => {
         if (layoutHeight === 0) {

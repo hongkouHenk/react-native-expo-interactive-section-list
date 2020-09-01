@@ -28,7 +28,8 @@ import React, { useState, useEffect} from 'react';
 
 import InteractiveSectionList from 'react-native-expo-interactive-section-list';
 
-import DishItem from './DishItem';
+import MyItem from './MyItem';
+import MySectionHeader from './MySectionHeader';
 
 const searchIcon = require('../../assets/search.png');
 
@@ -61,8 +62,9 @@ const Home = () => {
   return (
     <InteractiveSectionList
       data={data} // REQUIRED: SECTIONLIST DATA
-      renderItem={({ item }) => <DishItem item={item} />} // REQUIRED: SECTIONLIST ITEM COMPONENT
+      renderItem={({ item }) => <MyItem item={item} />} // REQUIRED: SECTIONLIST ITEM COMPONENT
       itemHeight={100}  // REQUIRED: USED TO IMPROVE PERFORMANCE
+      renderSectionHeader={({ section }) => <MySectionHeader section={section} />} // OPTIONAL
       tabbarItemWidth={100}  // OPTIONAL
       tabbarItemSpaceBetween={8}  // OPTIONAL
       tabbarItemFontSize={16}  // OPTIONAL

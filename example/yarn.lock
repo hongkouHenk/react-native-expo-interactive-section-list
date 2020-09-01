@@ -4345,9 +4345,9 @@ react-native-appearance@~0.3.3:
     invariant "^2.2.4"
     use-subscription "^1.0.0"
 
-react-native-expo-interactive-section-list@/Users/henkcorporaal/Projects/npm/interactive-section-list/interactive-section-list/react-native-expo-interactive-section-list-1.2.0.tgz:
-  version "1.2.0"
-  resolved "/Users/henkcorporaal/Projects/npm/interactive-section-list/interactive-section-list/react-native-expo-interactive-section-list-1.2.0.tgz#474bf14b390cf96fe56985ccd5aa9a6dcc28d33e"
+"react-native-expo-interactive-section-list@file:../react-native-expo-interactive-section-list-1.3.0.tgz":
+  version "1.3.0"
+  resolved "file:../react-native-expo-interactive-section-list-1.3.0.tgz#e895699715904cb7931a8be6915cea43a8915373"
   dependencies:
     react-native-section-list-get-item-layout "^2.2.3"
 

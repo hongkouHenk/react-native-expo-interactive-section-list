@@ -21,19 +21,19 @@ const DATA = [
     data: ['Cheese Cake', 'Ice Cream'],
   },
   {
-    title: 'Main dishes',
+    title: 'Italian',
     data: ['Pizza', 'Burger', 'Risotto'],
   },
   {
-    title: 'Sides',
+    title: 'Fried',
     data: ['French Fries', 'Onion Rings', 'Fried Shrimps'],
   },
   {
-    title: 'Drinks',
+    title: 'Cold',
     data: ['Water', 'Coke', 'Beer'],
   },
   {
-    title: 'Desserts',
+    title: 'Sweet',
     data: ['Cheese Cake', 'Ice Cream'],
   },
 ];
