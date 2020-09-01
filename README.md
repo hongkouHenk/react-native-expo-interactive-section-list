@@ -2,7 +2,7 @@
 
 Interactive Section List is a scrollable tab bar-controlled SectionList.
 
-(https://github.com/hongkouHenk/react-native-expo-interactive-section-list/blob/master/preview.gif)
+![preview](https://github.com/hongkouHenk/react-native-expo-interactive-section-list/blob/master/preview.gif)
 
 ## Features
 
