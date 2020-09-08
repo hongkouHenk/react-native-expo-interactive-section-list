@@ -26,6 +26,8 @@ interface Props {
   tabbarItemSpaceBetween?: number;
   tabbarItemActiveColor?: string;
   tabbarItemInactiveColor?: string;
+  titleActiveColor?: string;
+  titleInactiveColor?: string;
   tabbarItemFontSize?: number;
   tabbarIcon?: ImageSourcePropType;
 }
@@ -88,6 +90,8 @@ const InteractiveSectionList: React.FC<Props> = ({
   tabbarItemSpaceBetween,
   tabbarItemActiveColor,
   tabbarItemInactiveColor,
+  titleActiveColor,
+  titleInactiveColor,
   tabbarItemFontSize,
   tabbarIcon,
 }) => {
@@ -222,6 +226,8 @@ const InteractiveSectionList: React.FC<Props> = ({
         itemSpaceBetween={tabbarItemSpaceBetween}
         activeColor={tabbarItemActiveColor}
         inactiveColor={tabbarItemInactiveColor}
+        titleActiveColor={titleActiveColor}
+        titleInactiveColor={titleInactiveColor}
         fontSize={tabbarItemFontSize}
         icon={tabbarIcon}
       />

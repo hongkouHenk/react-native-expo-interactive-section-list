@@ -23,6 +23,8 @@ export interface Props {
   itemSpaceBetween?: number;
   activeColor?: string;
   inactiveColor?: string;
+  titleActiveColor?: string;
+  titleInactiveColor?: string;
   fontSize?: number;
   icon?: ImageSourcePropType;
 }
@@ -48,6 +50,8 @@ const ScrollableTabbar: React.FC<Props> = ({
   itemSpaceBetween = 8,
   activeColor = 'yellow',
   inactiveColor = 'transparent',
+  titleActiveColor = '#000000',
+  titleInactiveColor = '#000000',
   fontSize = 14,
   icon,
 }) => {
@@ -79,6 +83,8 @@ const ScrollableTabbar: React.FC<Props> = ({
         itemHeight={itemHeight}
         activeColor={activeColor}
         inactiveColor={inactiveColor}
+        titleActiveColor={titleActiveColor}
+        titleInactiveColor={titleInactiveColor}
         fontSize={fontSize}
       />
     ));

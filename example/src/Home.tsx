@@ -57,6 +57,7 @@ const Home: React.FC = () => {
       tabbarItemFontSize={16}
       tabbarItemActiveColor="#FED41A"
       tabbarItemInactiveColor="#FFF"
+      titleInactiveColor="#ABABAB"
       tabbarItemHeight={40}
       tabbarIcon={searchIcon}
     />

@@ -20,6 +20,8 @@ export interface Props {
   itemHeight?: number;
   activeColor?: string;
   inactiveColor?: string;
+  titleActiveColor?: string;
+  titleInactiveColor?: string;
   fontSize?: number;
 }
 
@@ -34,6 +36,8 @@ const TabbarItem: React.FC<Props> = ({
   itemHeight,
   activeColor,
   inactiveColor,
+  titleActiveColor,
+  titleInactiveColor,
   fontSize,
 }) => {
   return (
@@ -61,7 +65,20 @@ const TabbarItem: React.FC<Props> = ({
           },
         ]}
       >
-        <Text style={[styles.itemTitle, { fontSize }]} numberOfLines={1}>
+        <Text
+          style={[
+            styles.itemTitle,
+            { fontSize },
+            {
+              color:
+                (isManualSelect && selected) ||
+                (!isManualSelect && isFirstInView)
+                  ? titleActiveColor
+                  : titleInactiveColor,
+            },
+          ]}
+          numberOfLines={1}
+        >
           {item}
         </Text>
       </View>

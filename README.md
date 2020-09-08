@@ -68,8 +68,10 @@ const Home = () => {
       tabbarItemWidth={100}  // OPTIONAL
       tabbarItemSpaceBetween={8}  // OPTIONAL
       tabbarItemFontSize={16}  // OPTIONAL
-      tabbarItemActiveColor="#FED41A"  // OPTIONAL
-      tabbarItemInactiveColor="#FFF"  // OPTIONAL
+      tabbarItemActiveColor='#FED41A'  // OPTIONAL
+      tabbarItemInactiveColor='#FFF'  // OPTIONAL
+      titleActiveColor='#000' // OPTIONAL
+      titleInactiveColor='#EDEDED' // OPTIONAL
       tabbarItemHeight={40}  // OPTIONAL
       tabbarIcon={searchIcon}  // OPTIONAL
     />
