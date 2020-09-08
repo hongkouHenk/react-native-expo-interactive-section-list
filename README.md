@@ -70,8 +70,8 @@ const Home = () => {
       tabbarItemFontSize={16}  // OPTIONAL
       tabbarItemActiveColor='#FED41A'  // OPTIONAL
       tabbarItemInactiveColor='#FFF'  // OPTIONAL
-      titleActiveColor='#000' // OPTIONAL
-      titleInactiveColor='#EDEDED' // OPTIONAL
+      tabbarItemTitleActiveColor='#000' // OPTIONAL
+      tabbarItemTitleInactiveColor='#EDEDED' // OPTIONAL
       tabbarItemHeight={40}  // OPTIONAL
       tabbarIcon={searchIcon}  // OPTIONAL
     />
